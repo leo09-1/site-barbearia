@@ -1,0 +1,183 @@
+<!-- 
+  ============================================================
+  ARQUIVO: index.html
+  ============================================================
+  Este arquivo representa a estrutura visual do site do seu negócio.
+  Foi planejado com tags HTML5 semânticas para ser fácil de entender!
+  
+  DICA PARA INICIANTES: Os dados são carregados dinamicamente 
+  pelo arquivo 'app.js' nos elementos marcados com IDs específicos.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackwood Barber</title>
+  
+  <!-- Importamos os estilos externos para o design visual -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Fontes do Google para um visual profissional de alto nível -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Pacote de Ícones Lucide para enriquecer o visual -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Menu do Topo (Navegação Principal) -->
+  <header class="main-header">
+    <div class="nav-container">
+      <h1 id="brand-name" class="logo">Blackwood Barber</h1>
+      
+      <!-- Navegação para telas grandes -->
+      <nav class="desktop-nav">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <!-- Botão do menu celular -->
+      <button id="mobile-menu-toggle" class="mobile-toggle">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <!-- Navegação Celular (Invisível no início) -->
+    <nav id="mobile-menu-drawer" class="mobile-drawer hidden">
+      <a href="#inicio" onclick="toggleMenu()">Início</a>
+      <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+      <a href="#sobre" onclick="toggleMenu()">Sobre Nós</a>
+      <a href="#galeria" onclick="toggleMenu()">Galeria</a>
+      <a href="#equipe" onclick="toggleMenu()">Equipe</a>
+      <a href="#avaliacoes" onclick="toggleMenu()">Avaliações</a>
+      <a href="#contato" onclick="toggleMenu()">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Banner Principal (Seção Hero) -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h2 id="hero-title">Blackwood Barber</h2>
+      <p id="hero-subtitle" class="slogan">Seu estilo começa aqui.</p>
+      <p id="hero-tagline" class="tagline">Cortes, barba e estilo feitos para você.</p>
+      <a id="hero-cta-btn" class="cta-button" target="_blank" href="https://wa.me/5545999999999">
+        AGENDAR HORÁRIO
+      </a>
+    </div>
+  </section>
+
+  <!-- Grade com Nossos Serviços -->
+  <section id="servicos" class="section-padding">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div id="services-grid" class="cards-grid">
+        <!-- Injetado dinamicamente pelo arquivo app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre Nós -->
+  <section id="sobre" class="section-padding alternate-bg">
+    <div class="container container-split">
+      <div class="split-text">
+        <h2 id="about-title" class="section-title-left">Mais que um corte.</h2>
+        <p id="about-description" class="lead-text">A Blackwood Barber busca oferecer uma experiência diferenciada, com atendimento profissional, ambiente confortável e atenção aos detalhes.</p>
+      </div>
+      <div class="split-image-container">
+        <!-- Substitua esta imagem na pasta assets/ambiente1.jpg para trocar a foto -->
+        <img src="assets/images (5).jpeg" alt="Nosso Ambiente" id="about-image" class="about-photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Galeria de Fotos -->
+  <section id="galeria" class="section-padding">
+    <div class="container">
+      <h2 class="section-title">Nosso Trabalho</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="assets/images (9).jpeg" alt="Trabalho 1"></div>
+        <div class="gallery-item"><img src="assets/images (8).jpeg" alt="Trabalho 2"></div>
+        <div class="gallery-item"><img src="assets/images (7).jpeg" alt="Trabalho 3"></div>
+        <div class="gallery-item"><img src="assets/images (6).jpeg" alt="Trabalho 4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Conheça Nossa Equipe -->
+  <section id="equipe" class="section-padding alternate-bg">
+    <div class="container">
+      <h2 class="section-title">Conheça Nossa Equipe</h2>
+      <div id="team-grid" class="cards-grid team-grid">
+        <!-- Injetado dinamicamente pelo arquivo app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Avaliações de Clientes -->
+  <section id="avaliacoes" class="section-padding">
+    <div class="container">
+      <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+      <div id="testimonials-grid" class="cards-grid testimonials-grid">
+        <!-- Injetado dinamicamente pelo arquivo app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Localização, Horários e Footer -->
+  <section id="contato" class="section-padding contact-section">
+    <div class="container container-split">
+      <!-- Bloco de Localização -->
+      <div class="contact-box">
+        <h3 class="contact-subtitle"><i data-lucide="map-pin"></i> Venha nos visitar</h3>
+        <p id="contact-address" class="contact-text">Rua das Palmeiras, 250 - Centro</p>
+        <a id="btn-map" href="https://maps.google.com/?q=Rua%20das%20Palmeiras%2C%20250%20-%20Centro" target="_blank" class="map-button">
+          VER NO MAPA
+        </a>
+      </div>
+
+      <!-- Bloco de Horários -->
+      <div class="contact-box">
+        <h3 class="contact-subtitle"><i data-lucide="clock"></i> Horário de Atendimento</h3>
+        <ul class="hours-list">
+          <li>Segunda a Sexta: <strong id="hours-weekdays">09:00 às 19:00</strong></li>
+          <li>Sábado: <strong id="hours-saturday">09:00 às 17:00</strong></li>
+          <li>Domingo: <strong id="hours-sunday">Fechado</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Final CTA WhatsApp -->
+  <section class="section-padding cta-section-bottom">
+    <div class="container cta-bottom-box">
+      <h2>Pronto para mudar o visual?</h2>
+      <p>Agende seu horário com antecedência diretamente pelo WhatsApp.</p>
+      <a href="https://wa.me/5545999999999" target="_blank" class="cta-button">
+        AGENDAR PELO WHATSAPP
+      </a>
+    </div>
+  </section>
+
+  <!-- Rodapé Footer Principal -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 <span id="footer-biz-name">Blackwood Barber</span> - Todos os direitos reservados.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/blackwoodbarber" target="_blank"><i data-lucide="instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link de ativação do código lógico -->
+  <script src="app.js"></script>
+</body>
+</html>
